@@ -8,53 +8,77 @@
         Title="Инструментальные Средства Разработки Программного Обеспечения" 
         Height="700" 
         Width="800">
-    <Grid>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+	<Grid>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
 
-            <TextBlock Text="Студенты группы 4335"
+			<TextBlock Text="Студенты группы 4335"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"
                        FontSize="15px" 
                        Grid.Row="0" />
 
-            <Grid Grid.Row="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
+			<Grid Grid.Row="1">
+				<Grid.RowDefinitions>
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+					<RowDefinition />
+				</Grid.RowDefinitions>
 
-                <!-- Места для добавления элементов управления -->
+				<TextBlock Grid.Row="0">1. Алексеев Радмир Денисович</TextBlock>
+				<TextBlock Grid.Row="1">2. Галимуллин Ирек Ринатович</TextBlock>
+				<TextBlock Grid.Row="2">3. Губаев Ришат Марсельевич</TextBlock>
+				<TextBlock Grid.Row="3">4. Губашева Дина Ленаровна</TextBlock>
+				<TextBlock Grid.Row="4">5. Ефанова Анна Павловна 🧁</TextBlock>
+				<TextBlock Grid.Row="5">6. Закиров Алмаз Айратович</TextBlock>
+				<TextBlock Grid.Row="6">7. Климовская Анастасия Андреевна</TextBlock>
+				<TextBlock Grid.Row="7">8. Криушин Михаил Алексеевич</TextBlock>
+				<TextBlock Grid.Row="8">9. Масленников Алексей Сергеевич</TextBlock>
+				<TextBlock Grid.Row="9">10. Мухамадиева Ралина Раилевна</TextBlock>
+				<TextBlock Grid.Row="10">11. Нигаматзянова Камиля Завдатовна</TextBlock>
+				<TextBlock Grid.Row="11">12. Никулина Екатерина Дмитриевна</TextBlock>
+				<TextBlock Grid.Row="12">13. Нуруллин Артур Марселевич</TextBlock>
+				<TextBlock Grid.Row="13">14. Попова Мария Алексеевна</TextBlock>
+				<TextBlock Grid.Row="14">15. Сагиров Марсель Шамилевич</TextBlock>
+				<TextBlock Grid.Row="15">16. Садкин Максим Олегович</TextBlock>
+				<TextBlock Grid.Row="16">17. Тугашова Виктория Романовна</TextBlock>
+				<TextBlock Grid.Row="17">18. Хамзина Миляуша Айдаровна</TextBlock>
+				<TextBlock Grid.Row="18">19. Хисматуллина Айгуль Маратовна</TextBlock>
+				<TextBlock Grid.Row="19">20. Шаймарданов Адель Ахатович</TextBlock>
 
-                <!---->
+				<!-- Места для добавления элементов управления (кнопок) -->
+				<Button Grid.Row="13" 
+                        Grid.Column="1" 
+                        Content="Информация" 
+                        Width="100"
+                        Margin="5"
+                        Click="Button1_Click"/>
 
-            </Grid>
-        </Grid>
-    </Grid>
+			</Grid>
+		</Grid>
+	</Grid>
 </Window>

@@ -6,5 +6,11 @@ namespace Group4335
     {
         public MainWindow()
             => InitializeComponent();
+
+        private void Button1_Click(object sender, RoutedEventArgs e)
+        {
+            Info infow = new Info();
+            infow.Show();
+        }
     }
 }
