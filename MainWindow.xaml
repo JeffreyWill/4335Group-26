@@ -1,0 +1,138 @@
+<Window x:Class="WpfLab3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ЛР №3 — Вариант 10 | Сотрудники"
+        Height="640" Width="980"
+        WindowStartupLocation="CenterScreen"
+        Background="#F0F4F8">
+
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <TextBlock Grid.Row="0"
+                   Text="Сотрудники — Вариант 10"
+                   FontSize="20" FontWeight="Bold"
+                   Foreground="#2C3E50" Margin="0,0,0,12"/>
+
+        <!-- Кнопки -->
+        <WrapPanel Grid.Row="1" Margin="0,0,0,12">
+
+            <Button Content="📥 Импорт данных"
+                    x:Name="btnImport" Click="BtnImport_Click"
+                    Width="155" Height="36" Margin="0,0,10,0"
+                    Background="#2980B9" Foreground="White"
+                    FontSize="13" FontWeight="SemiBold" Cursor="Hand">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="5" Padding="8,4">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#1A6FA8"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.5"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button Content="📤 Экспорт в Excel"
+                    x:Name="btnExport" Click="BtnExport_Click"
+                    Width="160" Height="36" Margin="0,0,10,0"
+                    Background="#27AE60" Foreground="White"
+                    FontSize="13" FontWeight="SemiBold" Cursor="Hand">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="5" Padding="8,4">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#1E8449"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.5"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button Content="🔄 Обновить"
+                    x:Name="btnRefresh" Click="BtnRefresh_Click"
+                    Width="120" Height="36"
+                    Background="#8E44AD" Foreground="White"
+                    FontSize="13" FontWeight="SemiBold" Cursor="Hand">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="5" Padding="8,4">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#6C3483"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </WrapPanel>
+
+        <!-- Таблица -->
+        <Border Grid.Row="2" CornerRadius="8"
+                BorderBrush="#CBD5E0" BorderThickness="1"
+                Background="White" ClipToBounds="True">
+            <DataGrid x:Name="dgEmployees"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      CanUserAddRows="False"
+                      AlternatingRowBackground="#F7FAFC"
+                      RowBackground="White"
+                      GridLinesVisibility="Horizontal"
+                      HorizontalGridLinesBrush="#EDF2F7"
+                      HeadersVisibility="Column"
+                      BorderThickness="0"
+                      SelectionMode="Single">
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="#2C3E50"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontWeight" Value="SemiBold"/>
+                        <Setter Property="Padding" Value="10,8"/>
+                        <Setter Property="FontSize" Value="13"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID"             Binding="{Binding Id}"       Width="50"/>
+                    <DataGridTextColumn Header="Логин"          Binding="{Binding Login}"    Width="150"/>
+                    <DataGridTextColumn Header="Пароль (SHA-256)" Binding="{Binding Password}" Width="290"/>
+                    <DataGridTextColumn Header="Роль"           Binding="{Binding Role}"     Width="130"/>
+                    <DataGridTextColumn Header="ФИО"            Binding="{Binding FullName}" Width="180"/>
+                    <DataGridTextColumn Header="E-mail"         Binding="{Binding Email}"    Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+
+        <!-- Статус -->
+        <Border Grid.Row="3" Background="#2C3E50" CornerRadius="6"
+                Margin="0,10,0,0" Padding="12,6">
+            <TextBlock x:Name="txtStatus" Text="Инициализация..."
+                       Foreground="White" FontSize="12"/>
+        </Border>
+    </Grid>
+</Window>
